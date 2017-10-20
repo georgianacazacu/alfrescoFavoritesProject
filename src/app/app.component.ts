@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GetAPIService} from "./services/get-api.service";
+import * as _ from 'lodash'
 // import {MatCardModule} from '@angular/material';
 
 @Component({
@@ -14,21 +15,28 @@ export class AppComponent implements OnInit {
   files: any;
   folders: any;
 
-  constructor(private api: GetAPIService) {}
+  constructor(private api: GetAPIService) {
+  }
+
   ngOnInit() {
     this.api.getData().subscribe(
-      (data)  => {
+      (data) => {
         this.results = JSON.parse(data._body);
         this.results = this.results.list.entries;
-        this.results = this.results.map( item => item.entry.target);
-        //let result = this.results.map(function(a) {return a.entry.target;});
-      // this.files = this.results.map(this.api.toFile);
-      //  this.sites = this.results.map(this.api.toSite);
-      //   this.folders = this.results.map(this.api.toFolder);
-       console.log("all result ", this.results);
-       // console.log("all files", this.files);
-       // console.log("all folders", this.folders);
-       // this.api.toSite(this.results);
+        this.results = this.results.map(item => item.entry.target);
+
+        this.sites = _.filter(this.results, function (o) {
+          return o.site;
+        });
+
+        this.files = _.filter(this.results, function (o) {
+          return o.file;
+        });
+
+        this.folders = _.filter(this.results, function (o) {
+          return o.folder;
+        });
+
 
 
       }
