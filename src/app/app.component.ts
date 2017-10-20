@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GetAPIService} from "./services/get-api.service";
-import {MatCardModule} from '@angular/material';
+// import {MatCardModule} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import {MatCardModule} from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Favorite List Cards';
+  title = 'Favorite Cards List';
   results: any;
   sites: any;
   files: any;
@@ -18,15 +18,17 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.api.getData().subscribe(
       (data)  => {
-        console.log("what are all entries ", data._body);
         this.results = JSON.parse(data._body);
         this.results = this.results.list.entries;
-        this.files = this.results.map(this.api.toFile);
-        this.sites = this.results.map(this.api.toSite);
-        this.folders = this.results.map(this.api.toFolder);
+        this.results = this.results.map( item => item.entry.target);
+        //let result = this.results.map(function(a) {return a.entry.target;});
+      // this.files = this.results.map(this.api.toFile);
+      //  this.sites = this.results.map(this.api.toSite);
+      //   this.folders = this.results.map(this.api.toFolder);
        console.log("all result ", this.results);
-       console.log("all files", this.files);
-       console.log("all folders", this.folders);
+       // console.log("all files", this.files);
+       // console.log("all folders", this.folders);
+       // this.api.toSite(this.results);
 
 
       }
