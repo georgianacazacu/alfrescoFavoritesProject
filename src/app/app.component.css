@@ -1,5 +1,51 @@
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 25px;
+  text-align: center;
+}
+
+.site-width {
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.favorites,
+.favorites ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.favorites li {
+  width: 80%;
+  margin: 15px auto;
+}
+
+.favorites li mat-card-title {
+  white-space: nowrap;
+  max-width: 250px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fav {
+  position: absolute;
+  right: 15px;
+  opacity: .3;
+  color: #FF8C00;
+  top: 36%;
+}
+
+.title-icon {
+  position: relative;
+  top: 6px;
+}
+
+@media screen and (max-width: 520px) {
+  .favorites li {
+    width: auto;
+  }
 }

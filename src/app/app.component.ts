@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GetAPIService} from "./services/get-api.service";
 import * as _ from 'lodash'
-// import {MatCardModule} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import * as _ from 'lodash'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Favorite Cards List';
+  title = 'View your favorites';
   results: any;
   sites: any;
   files: any;
@@ -37,9 +36,12 @@ export class AppComponent implements OnInit {
           return o.folder;
         });
 
-
+          console.log( this.files)
 
       }
     );
+
   }
+
+
 }

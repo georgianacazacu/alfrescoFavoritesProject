@@ -4,6 +4,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {GetAPIService} from "./services/get-api.service";
 import {HttpModule} from "@angular/http";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatCardModule, MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,10 @@ import {HttpModule} from "@angular/http";
   imports: [
     BrowserModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [GetAPIService],
   bootstrap: [AppComponent]

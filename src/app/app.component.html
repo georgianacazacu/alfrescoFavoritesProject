@@ -1,8 +1,63 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{title}}!
-  </h1>
+<div class="site-width">
+  <h1>{{title}}!</h1>
+
+
+  <ul class="favorites">
+    <li>
+      Favorites sites
+      <ul>
+        <li *ngFor="let item of sites">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                <span class="title-icon">
+                <mat-icon>home</mat-icon></span>
+                {{item.site.title}}
+              </mat-card-title>
+            </mat-card-header>
+            <span class="fav"><mat-icon>grade</mat-icon></span>
+
+          </mat-card>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      Favorites files
+      <ul>
+        <li *ngFor="let item of files">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>
+                <span class="title-icon"><mat-icon>attachment</mat-icon></span>
+                {{item.file.name}}
+              </mat-card-title>
+            </mat-card-header>
+            <span class="fav"><mat-icon>grade</mat-icon></span>
+
+          </mat-card>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      Favorites folders
+      <ul>
+        <li *ngFor="let item of folders">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                <span class="title-icon"><mat-icon>folder</mat-icon></span>
+                {{item.folder.name}}
+              </mat-card-title>
+            </mat-card-header>
+            <span class="fav"><mat-icon>grade</mat-icon></span>
+
+          </mat-card>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
 
 </div>
-
