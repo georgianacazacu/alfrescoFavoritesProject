@@ -1,59 +1,39 @@
 <div class="site-width">
   <h1>{{title}}!</h1>
 
-
   <ul class="favorites">
     <li>
-      Favorites sites
+      <span *ngIf="sites"> Favorites sites</span>
       <ul>
         <li *ngFor="let item of sites">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title>
-                <span class="title-icon">
-                <mat-icon>home</mat-icon></span>
-                {{item.site.title}}
-              </mat-card-title>
-            </mat-card-header>
-            <span class="fav"><mat-icon>grade</mat-icon></span>
-
-          </mat-card>
+          <app-favorite-item
+            [item]="item.site.title"
+            [iconName]="iconHome">
+          </app-favorite-item>
         </li>
       </ul>
     </li>
 
     <li>
-      Favorites files
+      <span *ngIf="files"> Favorites files</span>
       <ul>
         <li *ngFor="let item of files">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>
-                <span class="title-icon"><mat-icon>attachment</mat-icon></span>
-                {{item.file.name}}
-              </mat-card-title>
-            </mat-card-header>
-            <span class="fav"><mat-icon>grade</mat-icon></span>
-
-          </mat-card>
+          <app-favorite-item
+            [item]="item.file.name"
+            [iconName]="iconFile">
+          </app-favorite-item>
         </li>
       </ul>
     </li>
 
     <li>
-      Favorites folders
+      <span *ngIf="folders"> Favorites folders</span>
       <ul>
         <li *ngFor="let item of folders">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title>
-                <span class="title-icon"><mat-icon>folder</mat-icon></span>
-                {{item.folder.name}}
-              </mat-card-title>
-            </mat-card-header>
-            <span class="fav"><mat-icon>grade</mat-icon></span>
-
-          </mat-card>
+          <app-favorite-item
+            [item]="item.folder.name"
+            [iconName]="iconFolder">
+          </app-favorite-item>
         </li>
       </ul>
     </li>

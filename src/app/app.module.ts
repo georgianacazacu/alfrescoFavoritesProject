@@ -6,10 +6,12 @@ import {GetAPIService} from "./services/get-api.service";
 import {HttpModule} from "@angular/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule, MatIconModule} from '@angular/material';
+import { FavoriteItemComponent } from './components/favorite-item/favorite-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FavoriteItemComponent
   ],
   imports: [
     BrowserModule,
