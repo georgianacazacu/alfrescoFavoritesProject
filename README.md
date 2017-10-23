@@ -17,8 +17,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-I have added some comments on app.components.ts. Please comment and uncomment the lines that I have specified to make the test run.
-I've used a local object for the tests only.
+
+I have added some comments on app.components.ts. 
+Please comment and uncomment the lines that I have specified to make the test run. I've used a local object for the tests only.
+The files with comments are app.component.ts and the get-api.service.ts
 
 
 ## Further help
