@@ -31,17 +31,12 @@ h1 {
   text-overflow: ellipsis;
 }
 
-.fav {
+span.fav {
   position: absolute;
   right: 15px;
   opacity: .3;
   color: #FF8C00;
   top: 36%;
-}
-
-.title-icon {
-  position: relative;
-  top: 6px;
 }
 
 @media screen and (max-width: 520px) {

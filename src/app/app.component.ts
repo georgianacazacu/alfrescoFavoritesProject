@@ -13,34 +13,52 @@ export class AppComponent implements OnInit {
   sites: any;
   files: any;
   folders: any;
+  iconHome = 'home';
+  iconFile = 'attachment';
+  iconFolder= 'folder';
 
   constructor(private api: GetAPIService) {
   }
 
   ngOnInit() {
-    this.api.getData().subscribe(
-      (data) => {
-        this.results = JSON.parse(data._body);
-        this.results = this.results.list.entries;
-        this.results = this.results.map(item => item.entry.target);
+    // this.api.getData().subscribe(
+    //   (data) => {
+    //     this.results = JSON.parse(data._body);
+    //     this.results = this.results.list.entries;
+    //     this.results = this.results.map(item => item.entry.target);
+    //
+    //     this.sites = _.filter(this.results, function (o) {
+    //       return o.site;
+    //     });
+    //
+    //     this.files = _.filter(this.results, function (o) {
+    //       return o.file;
+    //     });
+    //
+    //     this.folders = _.filter(this.results, function (o) {
+    //       return o.folder;
+    //     });
+    //
+    //       console.log( this.files)
+    //
+    //   }
+    // );
 
-        this.sites = _.filter(this.results, function (o) {
-          return o.site;
-        });
+    this.results = this.api.getData();
+    this.results = this.results.list.entries;
+    this.results = this.results.map(item => item.entry.target);
 
-        this.files = _.filter(this.results, function (o) {
-          return o.file;
-        });
+    this.sites = _.filter(this.results, function (o) {
+      return o.site;
+    });
 
-        this.folders = _.filter(this.results, function (o) {
-          return o.folder;
-        });
+    this.files = _.filter(this.results, function (o) {
+      return o.file;
+    });
 
-          console.log( this.files)
-
-      }
-    );
-
+    this.folders = _.filter(this.results, function (o) {
+      return o.folder;
+    });
   }
 
 

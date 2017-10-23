@@ -1,0 +1,21 @@
+span.fav {
+  position: absolute;
+  right: 15px;
+  opacity: .3;
+  color: #FF8C00;
+  top: 36%;
+}
+
+.favorites li mat-card-title {
+  white-space: nowrap;
+  max-width: 250px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-icon {
+  position: relative;
+  top: 6px;
+}
+
